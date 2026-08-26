@@ -1,0 +1,282 @@
+/* ========================================
+   PURPLE CATERING — Design Tokens & Base
+   ======================================== */
+
+@import "tailwindcss";
+
+/* ── Color Tokens ── */
+:root {
+  --royal: #5B21B6;
+  --orchid: #9333EA;
+  --blush: #E9D5FF;
+  --ivory: #FAF8F5;
+  --ink: #1C1917;
+  --gold: #B8860B;
+
+  --royal-dark: #4C1D95;
+  --orchid-light: #A855F7;
+  --blush-light: #F3E8FF;
+  --ink-soft: #44403C;
+  --ink-muted: #78716C;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+
+  --background: var(--ivory);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-royal: #5B21B6;
+  --color-orchid: #9333EA;
+  --color-blush: #E9D5FF;
+  --color-ivory: #FAF8F5;
+  --color-ink: #1C1917;
+  --color-gold: #B8860B;
+  --color-royal-dark: #4C1D95;
+  --color-orchid-light: #A855F7;
+  --color-blush-light: #F3E8FF;
+  --color-ink-soft: #44403C;
+  --color-ink-muted: #78716C;
+}
+
+/* ── Base Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Typography Helpers ── */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ── Woven Texture Pattern ── */
+.woven-texture {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 14px,
+    rgba(91, 33, 182, 0.03) 14px,
+    rgba(91, 33, 182, 0.03) 15px
+  );
+}
+
+.woven-texture-hero {
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 28px,
+      rgba(91, 33, 182, 0.04) 28px,
+      rgba(91, 33, 182, 0.04) 29px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 28px,
+      rgba(147, 51, 234, 0.03) 28px,
+      rgba(147, 51, 234, 0.03) 29px
+    );
+}
+
+/* ── Section Dividers (Woven Cut) ── */
+.woven-divider {
+  position: relative;
+}
+
+.woven-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: var(--ivory);
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+  z-index: 5;
+}
+
+.woven-divider-dark::after {
+  background: var(--ink);
+}
+
+/* ── Lightbox ── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 25, 23, 0.92);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* ── Scroll Reveal States ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* ── Bento Card Base ── */
+.bento-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(91, 33, 182, 0.12);
+}
+
+/* ── Button Styles ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--royal);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--royal-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(91, 33, 182, 0.35);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--royal);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  border: 2px solid var(--royal);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--royal);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ── Section Label ── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--orchid);
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--orchid);
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blush);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orchid);
+}
