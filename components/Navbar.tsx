@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -32,9 +33,14 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-royal text-white font-display text-sm font-bold tracking-tight">
-            PC
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Logo Purple Catering"
+            width={40}
+            height={40}
+            priority
+            className="h-10 w-10 shrink-0 rounded-full object-cover"
+          />
           <span
             className={`font-display text-lg font-bold tracking-tight transition-colors duration-300 ${
               scrolled ? 'text-ink' : 'text-white'

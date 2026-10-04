@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { siteConfig, socialLinks } from '@/lib/data';
 
@@ -12,9 +13,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-royal text-white font-display text-sm font-bold">
-                PC
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Logo Purple Catering"
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 rounded-full object-cover"
+              />
               <span className="font-display text-lg font-bold text-white">
                 Purple Catering
               </span>

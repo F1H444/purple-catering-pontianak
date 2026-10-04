@@ -36,9 +36,11 @@ export const aboutData = {
   storySignoff: 'Purple Catering — dari dapur rumahan, untuk menghadirkan cita rasa yang istimewa bagi setiap momen Anda.',
   // Foto diambil dari galeri (render halaman terakhir Price List PDF).
   image: '/menu/page-10-img-4.png', // Sambal goreng
+  // Ditampilkan sebagai poin keunggulan, bukan angka statistik,
+  // karena data jumlah klien/rating belum tersedia.
   stats: [
-    { value: '98%', label: 'Klien Puas' },
-    { value: '50+', label: 'Menu Pilihan' },
+    { value: 'Segar', label: 'Bahan Pilihan' },
+    { value: 'Higienis', label: 'Proses & Penyajian' },
   ],
 };
 

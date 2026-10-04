@@ -96,3 +96,208 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [browser] Image with src "/menu/page-10-img-1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+[browser] Image with src "/menu/page-10-img-3.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+⨯ ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format!
+
+
+[browser] Uncaught Error: ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format!
+
+
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+⨯ ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format!
+
+
+[browser] Uncaught Error: ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format!
+
+
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+⨯ ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format!
+
+
+[browser] Uncaught Error: ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format!
+
+
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+⨯ ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format!
+
+
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 
+[browser] ./app/favicon.ico
+Error: Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: The PNG is not in RGBA format!
+- The PNG is not in RGBA format! 

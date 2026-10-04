@@ -15,6 +15,7 @@ export default function StructuredData() {
     url: business.url,
     telephone: business.phone,
     image: `${business.url}/opengraph-image`,
+    logo: `${business.url}/logo.png`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: business.address,

@@ -72,6 +72,19 @@ Start-Process -FilePath 'npm.cmd' -ArgumentList 'run','dev' `
 - Log: `.freebuff/preview-009a83cf-147a-418f-ad74-d0e6dcab5511.log` (+ `.log.err`)
 - Pages: `/` (landing), `/menu` (all menus + link unduh price list PDF)
 
+## Branding / logo
+
+- Sumber asli: `public/logo.png` (1254x1254, emblem bulat "Purple Catering",
+  latar putih, tanpa alpha).
+- Dipakai di: navbar + footer (`components/Navbar.tsx`, `components/Footer.tsx`)
+  lewat `next/image` (`/logo.png`, tampil 40x40, `rounded-full`), gambar Open Graph
+  (`app/opengraph-image.tsx`, dibaca dari disk + disematkan sebagai data URI),
+  dan `logo` di JSON-LD (`components/StructuredData.tsx`).
+- Ikon tab: `app/favicon.ico` (32px), `app/icon.png` (256px), `app/apple-icon.png`
+  (180px) — ketiganya digenerate dari `public/logo.png` via `sharp`.
+  Catatan: PNG di dalam `favicon.ico` wajib RGBA (`sharp().ensureAlpha()`),
+  kalau tidak Next gagal decode dan seluruh halaman jadi 500.
+
 Notes:
 - If `next dev` reports "Another next dev server is already running", a previous
   detached server is still alive — find it via `netstat -ano | grep LISTENING` and

@@ -1,12 +1,25 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { ImageResponse } from 'next/og';
 
 export const alt = 'Purple Catering — Catering Pontianak';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
+// Membaca file logo dari disk, jadi perlu runtime Node.js.
+export const runtime = 'nodejs';
 
-// Gambar Open Graph 1200x630 yang digenerate otomatis (tanpa file statis),
+// Logo asli (public/logo.png) disematkan sebagai data URI agar tidak
+// bergantung pada request jaringan saat gambar digenerate.
+async function getLogoDataUrl() {
+  const buffer = await readFile(join(process.cwd(), 'public', 'logo.png'));
+  return `data:image/png;base64,${buffer.toString('base64')}`;
+}
+
+// Gambar Open Graph 1200x630 yang digenerate otomatis,
 // dipakai saat link dibagikan di WhatsApp/Facebook/Twitter.
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const logo = await getLogoDataUrl();
+
   return new ImageResponse(
     (
       <div
@@ -28,22 +41,16 @@ export default function OpengraphImage() {
             marginBottom: 28,
           }}
         >
-          <div
+          <img
+            alt=""
+            src={logo}
+            width={80}
+            height={80}
             style={{
-              width: 72,
-              height: 72,
-              borderRadius: 16,
-              background: '#ffffff',
-              color: '#5B21B6',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 34,
-              fontWeight: 700,
+              borderRadius: '50%',
+              objectFit: 'cover',
             }}
-          >
-            PC
-          </div>
+          />
           <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 28, letterSpacing: 2 }}>
             PURPLE CATERING
           </div>
