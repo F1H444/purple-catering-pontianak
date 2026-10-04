@@ -1,0 +1,410 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "lines": [
+        "Purple",
+        "Catering"
+      ],
+      "images": [
+        {
+          "file": "page-1-img-0.png",
+          "width": 560,
+          "height": 437
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "lines": [
+        "Purple",
+        "PriceList Purple Catering",
+        "Rp. 30.000",
+        "Nasi Lengkap",
+        "Bakso Sapi",
+        "Rp. 20.000",
+        "Siomay",
+        "Rp. 20.000",
+        "Tekwan",
+        "Rp. 20.000",
+        "Sate Ayam Rp. 25.000",
+        "Lontong Sayur Rp. 20.000",
+        "Rp. 20.000",
+        "Soto Ayam",
+        "Rp. 15.000",
+        "Bubur Pedas",
+        "Bubur Sapi/Lemak Pontianak Rp. 20.000",
+        "Roti Cane Rp. 17.000",
+        "Mie Tiaw Goreng/Rebus",
+        "Rp. 20.000",
+        "Bihun Goreng",
+        "Rp. 30.000",
+        "Nasi Goreng ayam",
+        "Rp. 20.000",
+        "Nasi Goreng Sapi",
+        "Rp. 20.000",
+        "Nasi Goreng Seafood Rp. 22.000",
+        "Paket Nasi Kabsah dan",
+        "Briyani",
+        "nampan ukuran / 8 Porsi Kambing Rp. 600.000",
+        "nampan ukuran / 5 Porsi Kambing Rp. 450.000",
+        "nampan ukuran / 8 Porsi Sapi Rp. 500.000",
+        "nampan ukuran / 5 Porsi Sapi Rp. 400.000",
+        "nampan ukuran / 8 Porsi Ayam Rp. 450.000",
+        "nampan ukuran / 5 Porsi Sapi Rp. 350.000",
+        "Catattan :",
+        "Nasi Briyani (Brasmati) ,daging (Kambing, Sapi, Ayam) Sambal Goreng Hati, Acar Timun, Sambal, Kerupuk",
+        "emping )"
+      ],
+      "images": [
+        {
+          "file": "page-2-img-0.png",
+          "width": 626,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "lines": [
+        "Purple",
+        "Catering",
+        "PriceList Purple",
+        "MINUMAN",
+        "Es Serbatt",
+        "Rp. 6.000",
+        "Es Serai Lemon",
+        "Rp. 8.000",
+        "Es Rujak",
+        "Rp. 7.000",
+        "Rp. 10.000",
+        "Es Buah",
+        "Rp. 6.000",
+        "Es Tahu",
+        "Rp. 7.000",
+        "Es Sari kacang Hijau",
+        "Rp. 6.000",
+        "Es coco Pandan",
+        "Es Orange Rp. 6.000",
+        "Es Syrup",
+        "Rp. 6.000",
+        "DESSERT",
+        "Rp. 10.000",
+        "kolak Pisang",
+        "Rp. 10.000",
+        "Setup Pisang",
+        "Rp. 15.000",
+        "Salad Buah",
+        "Rp. 15.000",
+        "Serawah Durian"
+      ],
+      "images": [
+        {
+          "file": "page-3-img-0.png",
+          "width": 560,
+          "height": 437
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "lines": [
+        "Purple",
+        "Catering",
+        "Menu Ayam",
+        "Ayam Goreng Tepung",
+        "Ayam Rendang",
+        "Ayam Bumbu Bali",
+        "Ayam Panggang",
+        "Ayam Kunyit",
+        "Ayam Serondeng",
+        "Ayam Goreng Lengkuas",
+        "Ayam Fillet Rujak",
+        "Ayam Goreng Tepung",
+        "Ayam Lada Hitam",
+        "Ayam Asam Manis",
+        "Ayam Semur Kecap",
+        "Ayam Ayam Kemangi",
+        "Ayam Gulai",
+        "Ayam Kalasan",
+        "Menu Seafood",
+        "Cumi Kampung Asam gurih",
+        "Cumi Pedas",
+        "Cumi Goreng Tepung",
+        "Udang Goreng Mentega",
+        "Udang Saos Asam Manis",
+        "Udang Goreng Tepung",
+        "Udang Sambal",
+        "Menu Ikan",
+        "Ikan Asam Pedas",
+        "Ikan Pindang",
+        "Ikan Balado",
+        "Ikan Fillet Bumbu Rujak ‘",
+        "Ikan Fillet Rujak",
+        "Ikan Fillet Asam Manis",
+        "Menu Sapi",
+        "Rendang",
+        "Semur",
+        "Sapi Lada Hitam",
+        "Sapi Aruk",
+        "Oseng sapi Cabe Hijau",
+        "Menu Gorengan",
+        "Bakwan Sayur",
+        "Bakwan udang",
+        "Bakwan Jagung",
+        "Perkedel Kentang Daging cincang"
+      ],
+      "images": []
+    },
+    {
+      "page": 5,
+      "lines": [
+        "Tahu / Tempe Goreng",
+        "Tahu isi",
+        "Puyung Hai Goreng",
+        "Menu Sambal",
+        "Sambal Goreng hati",
+        "Telur Acar",
+        "Orek tempe",
+        "Sambal Cumi Asin",
+        "Sambal Tahu Teri",
+        "Telur sambal",
+        "Sambal Pete",
+        "Menu Sayuran",
+        "Cah Kangkug Gulai Nagka",
+        "Cah pakis Oseng Kacang Panjang Ebi",
+        "Capcay Pokcoy Bawang Putih",
+        "Sayur Asam kompklet Sayur Daun Singkong",
+        "Sop Daging kacang merah Osengan Seafood",
+        "Asam pedas kentang daging, Cah Brokoli",
+        "Sop jagung Sop Komplet",
+        "Kimlo"
+      ],
+      "images": [
+        {
+          "file": "page-5-img-0.png",
+          "width": 313,
+          "height": 400
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "lines": [
+        "Purple",
+        "Catering",
+        "Paket Prasmanan",
+        ". Nasi Putih",
+        "Rp. 30.000",
+        ". Menu Ayam",
+        ". Manu Sambal",
+        ". Manu Sayuran",
+        ". Mineral",
+        ". Nasi Putih",
+        "Rp. 33.000",
+        ". Menu Ayam",
+        ". Menu Sambal",
+        ". Menu Gorengan",
+        ". Menu Sayuran",
+        ". Kerupuk",
+        ". Mineral",
+        "Rp. 32.000",
+        ". Nasi Putih",
+        ". Menu Sapi",
+        ". Menu Sambal",
+        ". Menu Sayuran",
+        ". Kerupuk",
+        ". Mineral",
+        "Rp. 37.000",
+        ". Nasi Putih",
+        ". Menu Ikan",
+        ". Menu Sambal",
+        ". Menu Sayuran",
+        ". Kerupuk",
+        ". Mineral"
+      ],
+      "images": [
+        {
+          "file": "page-6-img-0.png",
+          "width": 800,
+          "height": 623
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "lines": [
+        "Purple",
+        "Catering",
+        "Paket Prasmanan",
+        ". Nasi Putih",
+        "Rp. 40.000",
+        ". Menu Seafood",
+        ". Manu Sambal",
+        ". Manu Sayuran",
+        ". Mineral",
+        ". Nasi Putih",
+        "Rp. 41.000",
+        ". Menu Ikan",
+        ". Menu Sambal",
+        ". Menu Gorengan",
+        ". Menu Sayuran",
+        ". Kerupuk",
+        ". Mineral",
+        "Rp. 43.000",
+        ". Nasi Putih",
+        ". Menu Seafood",
+        ". Menu Sambal",
+        ". Menu Sayuran",
+        ". Menu Gorengan",
+        ". Kerupuk",
+        ". Mineral",
+        "Rp. 45.000",
+        ". Nasi Putih",
+        ". Menu Ayam",
+        ". Menu Sambal",
+        ". Menu Sayuran",
+        ". Menu Sapi",
+        ". Menu Gorengan",
+        ". Kerupuk",
+        ". Mineral",
+        "Catatan",
+        "Pemesanan Paket Prasmanan Minimal 50 Paket dan 50 paket Ricebox"
+      ],
+      "images": [
+        {
+          "file": "page-7-img-0.png",
+          "width": 800,
+          "height": 623
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "lines": [
+        "Purple",
+        "Catering",
+        "Party Add-ons",
+        "Pisang Singapore Rp. 2.500",
+        "Pisang Berangan Rp. 2.500",
+        "Jeruk Rp. 2.500",
+        "Nanas Rp. 2.500",
+        "Es Cream Rp. 3.000",
+        "Tokopi ( Kopi Susu ) Rp. 10.000",
+        "Kue Asin Rp. 2.000",
+        "Kue Manis Rp. 2.000",
+        "Talam Rp. 2.000",
+        "Puding Rp. 2.500",
+        "Kukusan",
+        "Rp. 2.000",
+        "Rujak Rp. 10.000",
+        "Catatan :",
+        "Dalam Kondisi Tertentu Party Add - Ons bisa Mix dengan yang Lain sesuai ketentuan atau",
+        "kesepakatan"
+      ],
+      "images": [
+        {
+          "file": "page-8-img-0.png",
+          "width": 560,
+          "height": 437
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "lines": [
+        "Purple",
+        "Deluxe Menu",
+        "Catering",
+        "Menu Ayam",
+        "Ayam Goreng Tepung",
+        "Ayam Rendang",
+        "Ayam Bumbu Bali",
+        "Ayam Panggang",
+        "Ayam Kunyit",
+        "Ayam Serondeng",
+        "Ayam Goreng Lengkuas",
+        "Ayam Fillet Rujak",
+        "Ayam Goreng Tepung",
+        "Ayam Lada Hitam",
+        "Ayam Asam Manis",
+        "Ayam Semur Kecap",
+        "Ayam Ayam Kemangi",
+        "Ayam Gulai",
+        "Ayam Kalasan",
+        "Menu Sayuran",
+        "Cah Kangkug Gulai Nagka",
+        "Cah pakis Oseng Kacang Panjang Ebi",
+        "Capcay Pokcoy Bawang Putih",
+        "Sayur Asam kompklet Sayur Daun Singkong",
+        "Sop Daging kacang merah Osengan Seafood",
+        "Asam pedas kentang daging, Cah Brokoli",
+        "Sop jagung Sop Komplet",
+        "Kimlo",
+        "Tambahan",
+        ". Bihun Goreng",
+        ". Mie Goreng Jawa Nasi Putih",
+        ". Orek tempe Menu Ayam",
+        "Deluxe Menu Rp. 25.000",
+        ".Telur balado . Acar",
+        "Menu Sayur",
+        ".",
+        "Menu Tambahan Kerupuk",
+        "Mineral"
+      ],
+      "images": [
+        {
+          "file": "page-9-img-0.png",
+          "width": 626,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "lines": [],
+      "images": [
+        {
+          "file": "page-10-img-0.png",
+          "width": 480,
+          "height": 292
+        },
+        {
+          "file": "page-10-img-1.png",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "file": "page-10-img-2.png",
+          "width": 480,
+          "height": 359
+        },
+        {
+          "file": "page-10-img-3.png",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "file": "page-10-img-4.png",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "file": "page-10-img-5.png",
+          "width": 480,
+          "height": 320
+        },
+        {
+          "file": "page-10-img-6.png",
+          "width": 480,
+          "height": 384
+        },
+        {
+          "file": "page-10-img-7.png",
+          "width": 480,
+          "height": 320
+        }
+      ]
+    }
+  ]
+}

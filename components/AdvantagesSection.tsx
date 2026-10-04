@@ -30,43 +30,33 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function AdvantagesSection() {
   return (
-    <section className="relative py-24 lg:py-32 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="relative flex items-center py-16 lg:min-h-screen lg:pt-20 lg:pb-12 bg-white">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
           <div className="section-label mb-4">{advantagesData.label}</div>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink mb-12 max-w-lg">
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink mb-6 max-w-2xl">
             {advantagesData.headline}
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {advantagesData.items.map((item, i) => {
             const isFull = item.span === 'full';
-            const isLarge = item.span === 'large';
 
-            const spanClass =
-              isLarge
-                ? 'lg:col-span-4 lg:row-span-2'
-                : isFull
-                ? 'lg:col-span-6'
-                : 'lg:col-span-3';
-
+            // Grid seragam 2 kolom (md ke atas) supaya kartu sejajar dan
+            // section tetap muat dalam satu layar.
             return (
-              <ScrollReveal
-                key={item.title}
-                delay={i * 0.1}
-                className={spanClass}
-              >
+              <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div
-                  className="bento-card p-8 h-full flex flex-col"
+                  className="bento-card p-6 h-full flex flex-col"
                   style={{
                     background: isFull ? '#5B21B6' : '#ffffff',
                     color: isFull ? '#ffffff' : '#1C1917',
-                    minHeight: isLarge ? 280 : 200,
+                    minHeight: 160,
                   }}
                 >
                   <div
-                    className="inline-flex h-12 w-12 items-center justify-center rounded-xl mb-5"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-xl mb-4"
                     style={{
                       background: isFull ? 'rgba(255,255,255,0.15)' : '#E9D5FF',
                       color: isFull ? '#ffffff' : '#5B21B6',

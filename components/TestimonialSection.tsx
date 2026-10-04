@@ -32,13 +32,13 @@ export default function TestimonialSection() {
   };
 
   return (
-    <section id="testimoni" className="relative py-24 lg:py-32 bg-ivory">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="testimoni" className="relative flex items-center py-16 lg:min-h-screen lg:pt-20 lg:pb-12 bg-ivory">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
           <div className="flex items-end justify-between mb-12">
             <div>
               <div className="section-label mb-4">Testimoni</div>
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink max-w-md">
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink max-w-2xl">
                 Kata Mereka yang Sudah Merasakan
               </h2>
             </div>
@@ -70,7 +70,7 @@ export default function TestimonialSection() {
         {/* Carousel */}
         <div
           ref={scrollRef}
-          className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory"
+          className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
           style={{ scrollbarWidth: 'none' }}
         >
           {testimonialData.map((t, i) => {

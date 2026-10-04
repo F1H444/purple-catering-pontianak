@@ -5,16 +5,16 @@ import { siteConfig } from '@/lib/data';
 
 export default function ContactSection() {
   return (
-    <section id="kontak" className="relative py-24 lg:py-32 bg-ivory">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="kontak" className="relative flex items-center py-16 lg:min-h-screen lg:pt-20 lg:pb-12 bg-ivory">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
           <div className="section-label mb-4">Kontak & Lokasi</div>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink mb-12 max-w-md">
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink mb-12 max-w-2xl">
             Kami Tunggu Di Sini
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 lg:gap-8">
           {/* Contact Info — spans 2 cols */}
           <ScrollReveal className="lg:col-span-2" delay={0}>
             <div className="space-y-4">
@@ -34,24 +34,6 @@ export default function ContactSection() {
                   <p className="text-xs text-ink-muted mb-0.5">WhatsApp</p>
                   <p className="text-sm font-semibold text-ink group-hover:text-royal transition-colors">
                     {siteConfig.phone}
-                  </p>
-                </div>
-              </a>
-
-              {/* Email */}
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="bento-card flex items-center gap-4 p-5 group"
-              >
-                <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blush text-royal">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-xs text-ink-muted mb-0.5">Email</p>
-                  <p className="text-sm font-semibold text-ink group-hover:text-royal transition-colors">
-                    {siteConfig.email}
                   </p>
                 </div>
               </a>

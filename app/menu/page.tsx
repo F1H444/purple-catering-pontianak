@@ -1,24 +1,33 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { menuItems, menuCategories } from '@/lib/data';
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
+import Lightbox from '@/components/Lightbox';
+
+const PRICE_LIST_PDF = '/PRCELIST%20PURPLE%20CATERING%20.pdf';
+
+/**
+ * Setiap halaman Price List PDF (public/PRCELIST PURPLE CATERING .pdf)
+ * sudah dirender ke PNG oleh `node scripts/render-pdf-pages.mjs`
+ * ke public/menu/pages/. Urutan & label mengikuti isi PDF.
+ */
+const PDF_PAGES = [
+  { src: '/menu/pages/page-01.png', title: 'Sampul' },
+  { src: '/menu/pages/page-02.png', title: 'Price List — Nasi Box' },
+  { src: '/menu/pages/page-03.png', title: 'Price List — Minuman' },
+  { src: '/menu/pages/page-04.png', title: 'Menu Ayam' },
+  { src: '/menu/pages/page-05.png', title: 'Tahu, Tempe & Sambal' },
+  { src: '/menu/pages/page-06.png', title: 'Paket Prasmanan — Mulai Rp 30.000' },
+  { src: '/menu/pages/page-07.png', title: 'Paket Prasmanan — Mulai Rp 40.000' },
+  { src: '/menu/pages/page-08.png', title: 'Party Add-ons' },
+  { src: '/menu/pages/page-09.png', title: 'Deluxe Menu — Mulai Rp 25.000' },
+  { src: '/menu/pages/page-10.png', title: 'Galeri Hidangan' },
+] as const;
 
 export default function MenuPage() {
-  const [activeCategory, setActiveCategory] = useState('Semua');
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const filteredItems = useMemo(() => {
-    return menuItems.filter((item) => {
-      const matchesCategory =
-        activeCategory === 'Semua' || item.category === activeCategory;
-      const matchesSearch =
-        searchQuery === '' ||
-        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesCategory && matchesSearch;
-    });
-  }, [activeCategory, searchQuery]);
+  const [zoom, setZoom] = useState<{ src: string; title: string; index: number } | null>(null);
 
   return (
     <section className="pt-28 pb-24 lg:pt-32 lg:py-32 bg-ivory min-h-screen">
@@ -29,138 +38,105 @@ export default function MenuPage() {
           <h1 className="font-display text-4xl lg:text-5xl font-bold text-ink mb-4">
             Jelajahi Pilihan Kami
           </h1>
-          <p className="text-ink-muted max-w-lg mb-10">
-            Dari nasi box harian hingga paket acara lengkap — temukan yang tepat untuk kebutuhan Anda.
+          <p className="text-ink-muted max-w-lg mb-6">
+            Price list lengkap Purple Catering — telusuri halaman demi halaman,
+            dari nasi box harian hingga paket prasmanan dan deluxe.
           </p>
+          <a
+            href={PRICE_LIST_PDF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mb-12 text-sm font-semibold text-royal hover:text-royal-dark transition-colors"
+          >
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2M7 9V5a2 2 0 012-2h4.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V9" />
+            </svg>
+            Unduh Price List (PDF)
+          </a>
         </ScrollReveal>
 
-        {/* Search + Filters */}
-        <ScrollReveal delay={0.1}>
-          <div className="flex flex-col sm:flex-row gap-4 mb-10">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <svg
-                className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-muted"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <input
-                type="text"
-                placeholder="Cari menu..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 bg-white rounded-xl border border-blush text-sm text-ink placeholder:text-ink-muted/50 focus:outline-none focus:ring-2 focus:ring-royal/20 focus:border-royal transition-all"
-              />
-            </div>
-
-            {/* Category filters */}
-            <div className="flex flex-wrap gap-2">
-              {menuCategories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    activeCategory === cat
-                      ? 'bg-royal text-white'
-                      : 'bg-white text-ink-soft border border-blush hover:border-royal/30 hover:text-royal'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
-
-        {/* Menu Grid */}
-        {filteredItems.length === 0 ? (
-          <ScrollReveal>
-            <div className="text-center py-20">
-              <svg className="mx-auto h-12 w-12 text-ink-muted/30 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <p className="text-ink-muted">Tidak ada menu yang cocok dengan pencarian Anda.</p>
-              <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setActiveCategory('Semua');
-                }}
-                className="mt-4 text-sm text-royal font-medium hover:underline"
-              >
-                Tampilkan semua menu
-              </button>
-            </div>
-          </ScrollReveal>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filteredItems.map((item, i) => (
-              <ScrollReveal key={item.id} delay={i * 0.05}>
-                <div className="bento-card group bg-white h-full flex flex-col">
-                  {/* Image placeholder */}
-                  <div className="relative aspect-[16/10] bg-blush overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center text-royal/20">
-                      <div className="text-center">
-                        <svg className="mx-auto h-10 w-10 mb-1 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        {/* Halaman Price List — satu per satu */}
+        <div className="space-y-14">
+          {PDF_PAGES.map((page, i) => (
+            <ScrollReveal key={page.src}>
+              <figure className="mx-auto max-w-4xl">
+                <figcaption className="mb-3 flex items-center gap-3">
+                  <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-royal font-mono text-[11px] font-bold text-white">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h2 className="font-display text-sm lg:text-base font-semibold text-ink-soft whitespace-nowrap">
+                    {page.title}
+                  </h2>
+                  <span className="h-px flex-1 bg-blush" />
+                </figcaption>
+                <div className="overflow-hidden rounded-2xl border border-blush bg-white shadow-sm">
+                  <button
+                    type="button"
+                    onClick={() => setZoom({ src: page.src, title: page.title, index: i + 1 })}
+                    className="group relative block w-full cursor-zoom-in"
+                    aria-label={`Perbesar halaman ${i + 1}: ${page.title}`}
+                  >
+                    <Image
+                      src={page.src}
+                      alt={`Price List Purple Catering — halaman ${i + 1}: ${page.title}`}
+                      width={1191}
+                      height={1685}
+                      priority={i === 0}
+                      sizes="(max-width: 896px) 100vw, 896px"
+                      className="h-auto w-full"
+                    />
+                    <span className="absolute inset-0 flex items-center justify-center bg-royal/0 group-hover:bg-royal/30 transition-colors duration-300">
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-1.5 bg-white rounded-lg px-3 py-1.5 text-xs font-semibold text-royal shadow">
+                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
                         </svg>
-                        <span className="text-[10px] font-mono">Foto menu</span>
-                      </div>
-                    </div>
-                    {/* Category badge */}
-                    <div className="absolute top-3 left-3">
-                      <span className="inline-block px-2.5 py-1 bg-white/90 backdrop-blur-sm rounded-md text-[10px] font-mono text-royal uppercase tracking-wider">
-                        {item.category}
+                        Perbesar
                       </span>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-5 flex flex-col flex-1">
-                    <h3 className="font-display text-lg font-bold text-ink mb-2 group-hover:text-royal transition-colors">
-                      {item.name}
-                    </h3>
-                    <p className="text-sm text-ink-muted leading-relaxed flex-1 mb-4">
-                      {item.description}
-                    </p>
-                    <div className="flex items-center justify-between pt-3 border-t border-blush/50">
-                      <p className="font-mono text-base font-bold text-gold">
-                        {item.price}
-                      </p>
-                      <a
-                        href={`https://wa.me/6281256789012?text=${encodeURIComponent(`Halo, saya tertarik dengan ${item.name}. Bisa info lebih lanjut?`)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs font-semibold text-royal hover:text-royal-dark transition-colors flex items-center gap-1"
-                      >
-                        Pesan
-                        <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
+                    </span>
+                  </button>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        )}
+              </figure>
+            </ScrollReveal>
+          ))}
+        </div>
 
-        {/* Back to home */}
-        <ScrollReveal delay={0.2}>
+        {/* CTA */}
+        <ScrollReveal>
           <div className="mt-16 text-center">
-            <a href="/" className="btn-secondary">
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Kembali ke Beranda
-            </a>
+            <p className="text-ink-muted mb-6">
+              Menemukan menu yang pas? Hubungi kami untuk konsultasi &amp; pemesanan.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://wa.me/6285250239161?text=Halo%20Purple%20Catering%2C%20saya%20ingin%20bertanya%20tentang%20menu%20Anda."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Pesan via WhatsApp
+              </a>
+              <Link href="/" className="btn-secondary">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Kembali ke Beranda
+              </Link>
+            </div>
           </div>
         </ScrollReveal>
       </div>
+
+      {/* Perbesar halaman */}
+      {zoom && (
+        <Lightbox
+          src={zoom.src}
+          alt={`Price List Purple Catering — halaman ${zoom.index}: ${zoom.title}`}
+          caption={`Halaman ${zoom.index} — ${zoom.title}`}
+          width={1191}
+          height={1685}
+          onClose={() => setZoom(null)}
+        />
+      )}
     </section>
   );
 }

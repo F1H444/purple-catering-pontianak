@@ -5,8 +5,8 @@ import { visionData } from '@/lib/data';
 
 export default function VisionSection() {
   return (
-    <section className="relative py-24 lg:py-32 bg-ivory">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="relative flex items-center py-16 lg:min-h-screen lg:pt-20 lg:pb-12 bg-ivory">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
           <div className="section-label mb-4">{visionData.label}</div>
         </ScrollReveal>
@@ -14,7 +14,7 @@ export default function VisionSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Visi */}
           <ScrollReveal delay={0}>
-            <div className="bento-card p-8 min-h-[260px] flex flex-col" style={{ background: '#ffffff' }}>
+            <div className="bento-card p-8 min-h-[260px] h-full flex flex-col" style={{ background: '#ffffff' }}>
               <div
                 className="inline-flex h-10 w-10 items-center justify-center rounded-lg mb-5"
                 style={{ background: '#E9D5FF', color: '#5B21B6' }}
@@ -35,7 +35,7 @@ export default function VisionSection() {
 
           {/* Misi */}
           <ScrollReveal delay={0.1}>
-            <div className="bento-card p-8 min-h-[260px] flex flex-col" style={{ background: '#ffffff' }}>
+            <div className="bento-card p-8 min-h-[260px] h-full flex flex-col" style={{ background: '#ffffff' }}>
               <div
                 className="inline-flex h-10 w-10 items-center justify-center rounded-lg mb-5"
                 style={{ background: '#E9D5FF', color: '#5B21B6' }}
@@ -60,7 +60,7 @@ export default function VisionSection() {
           {/* Motto */}
           <ScrollReveal delay={0.2}>
             <div
-              className="bento-card p-8 min-h-[260px] flex flex-col items-center justify-center text-center woven-texture relative overflow-hidden"
+              className="bento-card p-8 min-h-[260px] h-full flex flex-col items-center justify-center text-center woven-texture relative overflow-hidden"
               style={{ background: '#5B21B6', color: '#ffffff' }}
             >
               <div className="relative z-10">

@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import { Fraunces, Outfit, DM_Mono } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import StructuredData from '@/components/StructuredData';
+import Analytics from '@/components/Analytics';
+import { siteUrl } from '@/lib/site';
 import './globals.css';
 
 const fraunces = Fraunces({
@@ -25,17 +28,54 @@ const dmMono = DM_Mono({
   display: 'swap',
 });
 
+// Title ≤ 60 karakter, description ≤ 155 karakter (batas tampil di hasil pencarian).
+const homeTitle =
+  'Catering Pontianak — Nasi Box & Prasmanan | Purple Catering';
+const homeDescription =
+  'Jasa katering Pontianak sejak 2019: nasi box, tumpeng, prasmanan & snack box untuk pernikahan, kantor, arisan, dan syukuran. Pesan via WhatsApp.';
+
 export const metadata: Metadata = {
-  title: 'Purple Catering | Sajian Istimewa dari Pontianak',
-  description:
-    'Purple Catering menyediakan jasa katering premium di Pontianak, Kalimantan Barat. Nasi box, prasmanan, tumpeng, snack box, dan paket acara untuk wedding, corporate, dan hajatan.',
-  keywords: ['catering pontianak', 'katering kalimantan barat', 'nasi box pontianak', 'prasmanan', 'tumpeng', 'wedding catering'],
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: homeTitle,
+    template: '%s | Purple Catering',
+  },
+  description: homeDescription,
+  keywords: [
+    'catering pontianak',
+    'katering pontianak',
+    'nasi box pontianak',
+    'tumpeng pontianak',
+    'prasmanan pontianak',
+    'catering pernikahan pontianak',
+    'catering kantor pontianak',
+    'katering kalimantan barat',
+  ],
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Purple Catering | Sajian Istimewa dari Pontianak',
-    description: 'Catering premium untuk setiap momen berharga di Pontianak.',
     type: 'website',
     locale: 'id_ID',
+    url: '/',
+    siteName: 'Purple Catering',
+    title: homeTitle,
+    description:
+      'Catering Pontianak untuk nasi box, tumpeng, prasmanan & snack box. Dari dapur rumahan, hadirkan rasa istimewa untuk setiap momen Anda.',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: homeTitle,
+    description:
+      'Catering Pontianak untuk nasi box, tumpeng, prasmanan & snack box. Pesan mudah via WhatsApp.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
+  // Verifikasi Google Search Console (isi env NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION).
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export default function RootLayout({
@@ -49,9 +89,11 @@ export default function RootLayout({
       className={`${fraunces.variable} ${outfit.variable} ${dmMono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col font-[family-name:var(--font-body)] antialiased">
+        <StructuredData />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

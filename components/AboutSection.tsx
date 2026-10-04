@@ -6,16 +6,16 @@ import { aboutData } from '@/lib/data';
 
 export default function AboutSection() {
   return (
-    <section id="tentang" className="relative py-24 lg:py-32 bg-ivory">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="tentang" className="relative flex items-center py-16 lg:min-h-screen lg:pt-20 lg:pb-12 bg-ivory">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
           <div className="section-label mb-4">{aboutData.label}</div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 lg:grid-cols-6 lg:gap-8">
           {/* Image — spans 4 cols */}
-          <ScrollReveal direction="left" className="lg:col-span-4">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-blush">
+          <ScrollReveal direction="left" className="md:col-span-1 lg:col-span-2">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-blush lg:aspect-[3/4]">
               <Image
                 src={aboutData.image}
                 alt="Suasana dapur dan penyajian Purple Catering"
@@ -27,15 +27,15 @@ export default function AboutSection() {
           </ScrollReveal>
 
           {/* Content — spans 2 cols */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="md:col-span-1 lg:col-span-4 space-y-4">
             <ScrollReveal delay={0.1}>
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-ink leading-tight">
+              <h2 className="font-display text-2xl lg:text-3xl font-bold text-ink leading-tight">
                 {aboutData.headline}
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <p className="text-ink-soft leading-relaxed">
+              <p className="text-sm text-ink-soft leading-relaxed">
                 {aboutData.story}
               </p>
             </ScrollReveal>
@@ -46,9 +46,25 @@ export default function AboutSection() {
               </p>
             </ScrollReveal>
 
+            <ScrollReveal delay={0.35}>
+              <p className="text-ink-muted leading-relaxed text-sm">
+                {aboutData.storyClosing}
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.4}>
+              <p className="text-sm leading-relaxed font-medium text-royal">
+                {aboutData.storySignoff}
+              </p>
+            </ScrollReveal>
+
             {/* Stats */}
             <ScrollReveal delay={0.4}>
-              <div className="grid grid-cols-3 gap-4 pt-4 border-t border-blush">
+              <div
+                className={`grid gap-4 pt-4 border-t border-blush ${
+                  aboutData.stats.length === 2 ? 'grid-cols-2' : 'grid-cols-3'
+                }`}
+              >
                 {aboutData.stats.map((stat) => (
                   <div key={stat.label} className="text-center">
                     <p className="font-mono text-2xl lg:text-3xl font-bold text-royal">

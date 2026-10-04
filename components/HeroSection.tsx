@@ -22,7 +22,7 @@ export default function HeroSection() {
     )
       .fromTo(
         '.hero-headline-word',
-        { opacity: 0, y: 50, rotateX: -15 },
+        { opacity: 0, y: 40, rotateX: -15 },
         { opacity: 1, y: 0, rotateX: 0, duration: 0.8, stagger: 0.15 },
         '-=0.3'
       )
@@ -40,8 +40,8 @@ export default function HeroSection() {
       )
       .fromTo(
         '.hero-visual',
-        { opacity: 0, scale: 0.92, x: 40 },
-        { opacity: 1, scale: 1, x: 0, duration: 1 },
+        { opacity: 0, scale: 0.94, y: 24 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.9 },
         '-=0.8'
       );
 
@@ -54,33 +54,32 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-screen flex items-center bg-royal overflow-hidden woven-texture-hero"
+      className="relative flex min-h-screen items-center overflow-hidden bg-royal woven-texture-hero"
     >
-      {/* Decorative diagonal accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-royal-dark/30 hidden lg:block" style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)' }} />
+      {/* Soft decorative glows — no hard edges */}
+      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[40rem] w-[40rem] rounded-full bg-royal-dark/50 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-[-12rem] left-[-6rem] h-[32rem] w-[32rem] rounded-full bg-orchid/25 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 lg:px-8 w-full">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-          {/* Text Content */}
-          <div className="order-2 lg:order-1">
-            <div className="hero-label section-label !text-white/70 mb-6">
-              <span className="!bg-white/70" />
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
+          {/* ── Text ── */}
+          <div className="order-2 max-w-xl lg:order-1">
+            <div className="hero-label section-label mb-6 !text-white/70 [&::before]:!bg-white/50">
               Purple Catering &mdash; Pontianak
             </div>
 
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.05] mb-6">
+            <h1 className="font-display text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-6xl xl:text-7xl mb-6">
               <span className="hero-headline-word inline-block">{heroData.headline}</span>
-              <br />
-              <span className="hero-headline-word inline-block text-blush">
+              <span className="hero-headline-word mt-1 block text-blush">
                 {heroData.headlineAccent}
               </span>
             </h1>
 
-            <p className="hero-desc text-lg text-white/70 max-w-lg leading-relaxed mb-8">
+            <p className="hero-desc mb-8 max-w-lg text-lg leading-relaxed text-white/70">
               {heroData.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href={heroData.ctaPrimary.href}
                 className="hero-cta btn-primary !bg-white !text-royal hover:!bg-blush-light"
@@ -99,40 +98,41 @@ export default function HeroSection() {
             </div>
 
             {/* Trust signals */}
-            <div className="hero-cta mt-10 flex items-center gap-6 text-sm text-white/50">
+            <div className="hero-cta mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-white/60">
               <div className="flex items-center gap-2">
                 <svg className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                 <span>4.9/5 dari 200+ klien</span>
               </div>
-              <span className="h-1 w-1 rounded-full bg-white/20" />
-              <span>500+ acara terlayani</span>
+              <span className="h-1 w-1 rounded-full bg-white/25" />
+              <span>Melayani Pontianak &amp; sekitarnya</span>
             </div>
           </div>
 
-          {/* Visual */}
-          <div className="hero-visual order-1 lg:order-2 relative">
-            <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden bg-royal-dark/50">
-              <Image
-                src={heroData.image}
-                alt="Hidangan catering premium dari Purple Catering"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-royal/10" />
-            </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 lg:-left-8 bg-white rounded-xl px-5 py-3 shadow-lg">
-              <p className="font-mono text-xs text-ink-muted uppercase tracking-wider">Sejak</p>
-              <p className="font-display text-xl font-bold text-royal">Pontianak</p>
+          {/* ── Visual ── */}
+          <div className="hero-visual order-1 lg:order-2">
+            <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-royal-dark/50 shadow-2xl shadow-royal-dark/40">
+                <Image
+                  src={heroData.image}
+                  alt="Hidangan catering premium dari Purple Catering"
+                  fill
+                  className="object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-royal-dark/60 via-transparent to-transparent" />
+
+                {/* Badge — contained inside the frame */}
+                <div className="absolute bottom-4 left-4 rounded-xl bg-white/95 px-4 py-2.5 shadow-lg backdrop-blur">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-ink-muted">Sejak</p>
+                  <p className="font-display text-lg font-bold leading-tight text-royal">Pontianak</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom woven cut */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-ivory" style={{ clipPath: 'polygon(0 60%, 100% 0, 100% 100%, 0 100%)' }} />
     </section>
   );
 }
